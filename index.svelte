@@ -2,17 +2,26 @@
 // @ts-ignore
 import Dropdown from "../components/Dropdown.svelte";
 
-// async function getData({fetch}){
-//     let res =await fetch("/data/index.json.js");
-//     const data =await res.json()
-//     return data
-// }
-// const userdata=getData();
-// export const post=async ({request})=>{
-// const res=await request.json();
-// return res
-// }
-// export let resdata=post();
+const data=[
+        {
+            id:1,
+            firstname:'Ramesh babu',
+            lastname:'R',
+            email:'ramesh@gmail.com'
+        },
+        {
+            id:2,
+            firstname:'Aravind',
+            lastname:'K',
+            email:'aravind@gmail.com'
+        },
+        {
+            id:3,
+            firstname:'Saruk',
+            lastname:'R',
+            email:'saruk@gmail.com'
+        }
+    ]
 
 
 </script>
@@ -73,30 +82,32 @@ import Dropdown from "../components/Dropdown.svelte";
                             
                         </tr>
                     </thead>
+                    {#each data as datavalue}
                     <tbody class="bg-white">
                         <tr class="whitespace-nowrap">
                             <td class="px-6 py-4 text-sm text-gray-500">
-                                1
+                                {datavalue.id}
                             </td>
                             <td class="px-6 py-4">
                                 <div class="text-sm text-gray-900">
-                                    John
+                                    {datavalue.firstname}
                                 </div>
                             </td>
                             <td class="px-6 py-4 text-sm text-gray-500">
-                                doe
+                                {datavalue.lastname}
                             </td>
                             <td class="px-6 py-4">
-                                <div class="text-sm text-gray-500">jhondoe@example.com</div>
+                                <div class="text-sm text-gray-500">{datavalue.email}</div>
                             </td>
                            
                             
                         </tr>
 
                     </tbody>
+                    {/each}
                 </table>
+                 
             </div>
         </div>
     </div>
 </div>    
- 
